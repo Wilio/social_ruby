@@ -1,0 +1,46 @@
+<div id="wrapper">
+  <div id="register_box">
+      <%= form_tag('create', remote: true, method: "post", id: "register_form") do %>
+        <p>
+          <%= label_tag(:username, "username:") %> <br>
+          <%= text_field_tag(:username) %><span id="user_error" style="font-size: 10px;"></span>
+        </p>
+      <p>
+        <%= label_tag(:password, "password:") %> <br>
+        <%= password_field_tag(:password) %><br>
+        <span id="password_error" style="font-size: 10px;"></span>
+      </p>
+      <p>
+        <%= label_tag(:password_check, "please re-enter your password!") %> <br>
+        <%= password_field_tag(:password_check) %> <br>
+        <span id="password_check_error" style="font-size: 10px;"></span>
+      </p>
+      <p>
+        <%= label_tag(:email, "please enter your email motherfucker") %><br>
+        <%= text_field_tag(:email) %> <br>
+        <span id="email_error" style="font-size: 10px;"></span>
+      </p>
+      <p>
+        <%= label_tag(:email_check, "please verify your e-mail") %><br>
+        <%= text_field_tag(:email_check) %> <br>
+        <span id="email_check_error" style="font-size: 10px;"></span>
+      </p>
+      <%= submit_tag("Register") %>
+      <p style="color: red;">
+        <%= @error %>
+      </p>
+    <% end %>
+  </div>
+  <div id="info_box">
+    <h2> Registration Guide </h2>
+    <ol>
+      <li>Username must be between 3 and 20 characters, alphanumerical. </li>
+      <li>Password must be between 5 and 30 characters, all characters allowed. </li>
+      <li>Enter an email with a valid form (ex:something@yourmom.com).</li>
+      <li>Press The Red Button. </li>
+      <li>Poof, you're registered. </li>
+    </ol>
+  </div>
+  <div style="clear: both;"></div>
+</div>
+

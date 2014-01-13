@@ -11,32 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131231185840) do
+ActiveRecord::Schema.define(version: 20140108183331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "anonymous", id: false, force: true do |t|
-    t.text "crypted_id"
-    t.text "salt"
+  create_table "tmp_users", id: false, force: true do |t|
+    t.text     "username",   null: false
+    t.text     "password",   null: false
+    t.text     "salt",       null: false
+    t.text     "email",      null: false
+    t.text     "auth_key",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "comments", id: false, force: true do |t|
-    t.integer "comment_id",                 null: false
-    t.integer "user_id"
-    t.boolean "anonymous",  default: false
-    t.integer "parent_id"
-    t.text    "content"
-  end
+  add_index "tmp_users", ["username", "email"], name: "index_tmp_users_on_username_and_email", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.string "username",  limit: 20,  null: false
-    t.string "password",  limit: 100, null: false
-    t.string "email",     limit: 50,  null: false
-    t.date   "join_date"
-    t.string "location",  limit: 50
-    t.string "website",   limit: 90
-    t.date   "birthday"
+    t.text     "username",   null: false
+    t.text     "password",   null: false
+    t.text     "salt",       null: false
+    t.text     "email",      null: false
+    t.text     "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "users", ["username", "email"], name: "index_users_on_username_and_email", unique: true, using: :btree
 
 end

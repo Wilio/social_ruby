@@ -1,14 +1,16 @@
 TheSystem::Application.routes.draw do
 
-  get "welcome/index"
+  get "register/index"
+  post "register/create"
+  get "register/validation"
 
-  resources :posts
+ resources :users
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: "welcome#index"
+  root to: 'users#new'
 
 
   # Example of regular route:
