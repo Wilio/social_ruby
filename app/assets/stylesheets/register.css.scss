@@ -2,19 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$font: Georgia bold;
-
-html, body {
-  background-color: #AA1111;
-  //overflow-x: hidden;
-}
-
-body{
-  //margin: 0;
-  }
-
-#wrapper {
-  font: $font;
+#wrapper_register {
   padding: 1.5%;
   background-color: white;
   width: 50%;
