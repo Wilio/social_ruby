@@ -23,7 +23,7 @@ TheSystem::Application.configure do
   config.active_record.migration_error = :page_load
 
   config.assets.paths << "#{Rails.root}/app/assets/fonts"
-config.assets.precompile += %w( .svg .eot .woff .ttf )
+config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
