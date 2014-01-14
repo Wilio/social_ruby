@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$font: Georgia bold;
+
 html, body {
   background-color: #AA1111;
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 body{
@@ -12,9 +14,10 @@ body{
   }
 
 #wrapper {
+  font: $font;
   padding: 1.5%;
   background-color: white;
-  width: 75%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3%;
@@ -44,7 +47,7 @@ input[type=text], input[type=password] {
 
 input[type=submit] {
   text-align: center;
-  width: 70%;
+  width: 50%;
   padding-top: 1%;
   padding-bottom: 1%;
   color: white;
@@ -54,7 +57,11 @@ input[type=submit] {
   border-radius: 5px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1120px) {
+ 
+#wrapper {
+ min-width: 480px;
+}
  
 #info_box {
  width:100%;

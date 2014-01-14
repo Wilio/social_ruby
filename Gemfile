@@ -12,7 +12,7 @@ gem "bcrypt-ruby", "~> 3.1.2"
 
 # use simple_form
 
-gem 'simple_form'
+#gem 'simple_form'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
