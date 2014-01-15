@@ -5,19 +5,19 @@
 @font-face {
 
 font-family: delicious;
-src:url('/assets/Exo2-LightItalic.ttf');
-font-style: italic;
+src:url('/assets/IstokWeb-Bold.ttf');
+font-weight: bold;
 }
 
 @font-face {
 
-font-family: 'delicious';
+font-family: delicious;
 src:font-url('/assets/IstokWeb-Regular.ttf') format('truetype');
 
 }
 
 #wrapper_register {
-  font-family: 'delicious';
+  font-family: delicious;
   padding: 1.5%;
   background-color: white;
   width: 50%;
@@ -28,6 +28,8 @@ src:font-url('/assets/IstokWeb-Regular.ttf') format('truetype');
 }
 
 #register_box {
+  font-weight: bold;
+  font-size: 12px;
   float: left;
   width: 34%;
   padding-left: 1%;
@@ -41,6 +43,7 @@ src:font-url('/assets/IstokWeb-Regular.ttf') format('truetype');
   width: 64%;
  
 }
+
 
 input[type=text], input[type=password] {
   border: 1px solid lightgray;

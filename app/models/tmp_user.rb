@@ -18,7 +18,7 @@ class TmpUser < ActiveRecord::Base
 
   def email_validation(email)
     
-    regexp = /[A-Za-z0-9%_\.]@{1}\w+(\.+[a-z]{2,4})?(\.[a-z]{2,4})$/
+    regexp = /[A-Za-z0-9_\.]@{1}\w+(\.+[a-z]{2,4})?(\.[a-z]{2,4})$/
     if regexp.match(email).nil?
       email_validation = false
     else
