@@ -11,18 +11,16 @@
       </p>
       <p>
         <%= label_tag(:password_check, "verify password:") %> <br>
-        <%= password_field_tag(:password_check) %> <span id="password_check_error" style="font-size: 10px;">
+        <%= password_field_tag(:password_check) %><span id="password_check_error" style="font-size: 10px;">
         </span>
       </p>
       <p>
         <%= label_tag(:email, "e-mail:") %><br>
-        <%= text_field_tag(:email) %> <br>
-        <span id="email_error" style="font-size: 10px;"></span>
+        <%= text_field_tag(:email) %><span id="email_error" style="font-size: 10px;"></span>
       </p>
       <p>
         <%= label_tag(:email_check, "verify e-mail:") %><br>
-        <%= text_field_tag(:email_check) %> <br>
-        <span id="email_check_error" style="font-size: 10px;"></span>
+        <%= text_field_tag(:email_check) %><span id="email_check_error" style="font-size: 10px;"></span>
       </p>
       <%= submit_tag("Register") %>
       <p style="color: red;">
