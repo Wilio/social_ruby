@@ -31,34 +31,37 @@ class RegisterController < ApplicationController
 
   def create
     
-    respond_to do |format|
-      format.js {}
-    end   
     @tmp_user = TmpUser.new
-    #the first step here is to check some length of our username, password and also verify if the email is in fact a valid one. AAHAHAHAHA
-    if params[:username].size < 3 && params[:username].size > 20
-      redirect_to action: "index", :error => "1"
-    #have to see if I can perfect this thing a bit here  
-    elsif params[:password].size < 5 && params[:password].size > 30
-      redirect_to action: "index", :error => "2"
-    elsif params[:password] != params[:password_check]
-      redirect_to action: "index", :error => "3"
-    elsif @tmp_user.email_validation(params[:email]) == false
-      redirect_to action: "index", :error => "4"
-    elsif params[:email] != params[:email_check]
-      redirect_to action: "index", :error => "5"
-    elsif @tmp_user.username_validation(params[:username]) == false
-      redirect_to action: "index", :error => "6"
-    else
+
+    respond_to do |format|
+      if params[:username].size < 3 && params[:username].size > 20
+        redirect_to action: "index", :error => "1"
+      #have to see if I can perfect this thing a bit here  
+      elsif params[:password].size < 5 && params[:password].size > 30
+        redirect_to action: "index", :error => "2"
+      elsif params[:password] != params[:password_check]
+        redirect_to action: "index", :error => "3"
+      elsif @tmp_user.email_validation(params[:email]) == false
+        redirect_to action: "index", :error => "4"
+      elsif params[:email] != params[:email_check]
+        redirect_to action: "index", :error => "5"
+      elsif @tmp_user.username_validation(params[:username]) == false
+        redirect_to action: "index", :error => "6"
+      else
       @tmp_user.username = params[:username]
       @tmp_user.salt = @tmp_user.salt_maker
       @tmp_user.auth_key = @tmp_user.auth_maker
       @tmp_user.password = @tmp_user.password_hashing(params[:password])
       @tmp_user.email = params[:email]
       @tmp_user.save
-      redirect_to "/welcome/index"
     end
-  end
+      format.html {redirect_to(@tmp_user)}
+      format.js {}
+      format.json {render json: {:msg => "fuck off"}}
+
+    end   
+        #the first step here is to check some length of our username, password and also verify if the email is in fact a valid one. AAHAHAHAHA
+     end
 
   def validation
     #Pq1/npYn6AckV5vJQR1vUA==

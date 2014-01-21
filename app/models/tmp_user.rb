@@ -8,7 +8,7 @@ class TmpUser < ActiveRecord::Base
 
   def username_validation(username)
   
-    regexp = /^[\w[^\W]]*$/ #basically we only accept letters, numbers and undersscore
+    regexp = /^[\w_]*$/ #basically we only accept letters, numbers and undersscore
     if regexp.match(username).nil?
        username_validation = true
     else
@@ -18,7 +18,7 @@ class TmpUser < ActiveRecord::Base
 
   def email_validation(email)
     
-    regexp = /[A-Za-z0-9_\.]@{1}\w+(\.+[a-z]{2,4})?(\.[a-z]{2,4})$/
+   regexp = /^[\w\.]+@{1}\w+(\.+[a-z]{2,4})?(\.[a-z]{2,4})$/
     if regexp.match(email).nil?
       email_validation = false
     else
