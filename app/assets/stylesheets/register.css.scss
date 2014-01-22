@@ -88,5 +88,9 @@ input[type=submit] {
 
 }
 
-
+@media handheld {
+  body{
+    background-color: blue;
+  }
+}
 
