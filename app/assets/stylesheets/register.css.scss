@@ -88,12 +88,19 @@ input[type=submit] {
 
 }
 
-@media handheld {
+@media handheld and (max-width: 769px) {
 
-#info_box {
 
-font-size: 20px;
+  #register_box {
 
-}
+    font-size: 50px;
+
+  }
+
+  #info_box {
+
+    font-size: 20px;
+
+  }
 
 }
