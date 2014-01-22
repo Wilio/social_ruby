@@ -31,7 +31,7 @@ src:font-url('/assets/IstokWeb-Regular.ttf') format('truetype');
 #register_box {
   margin: 0 auto;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16em;
   float: left;
   width: 33.5%;
   padding-left: 1%;
@@ -40,6 +40,7 @@ src:font-url('/assets/IstokWeb-Regular.ttf') format('truetype');
 }
 
 #info_box {
+  font-size: 16em;
   float: right;
   padding-left: 1.5%;
   width: 63.5%;
@@ -88,9 +89,4 @@ input[type=submit] {
 
 }
 
-@media handheld {
-  body{
-    background-color: blue;
-  }
-}
 
