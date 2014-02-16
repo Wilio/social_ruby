@@ -19,10 +19,7 @@ end
 class User < ActiveRecord::Base
 
   include BCrypt
-
   has_and_belongs_to_many :clubs
-  has_many :posts
-  has_many :comments
 
   validates :username, length: {in: 5..20}, uniqueness: {case_sensitive: false}, username: true
   validates  :email, confirmation: true 

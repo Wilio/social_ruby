@@ -10,8 +10,6 @@ gem 'rails', '4.0.2'
 
 gem "bcrypt-ruby", "~> 3.1.2"
 
-# use simple_form
-
 #gem 'simple_form'
 
 # Use SCSS for stylesheets

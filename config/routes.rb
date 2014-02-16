@@ -1,7 +1,7 @@
 TheSystem::Application.routes.draw do
 
-  get "register/index"
-  post "register/create"
+  get "register", to: "register#index"
+  post "register/create", to: "register#index"
   get "register/validation"
 
  resources :users
