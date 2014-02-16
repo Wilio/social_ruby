@@ -13,6 +13,7 @@
 
 #ignore database.yml
 /config/databse.yml
+config/databse.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
